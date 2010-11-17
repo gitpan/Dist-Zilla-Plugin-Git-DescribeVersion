@@ -1,0 +1,20 @@
+Revision History for Dist-Zilla-Plugin-Git-DescribeVersion
+==========================================================
+
+0.007006
+--------
+
+f8d40c2 Configure new plugin dist
+
+f58a4ee Add tailored gitignore file
+
+2fe251f Move Dist::Zilla example ini to plugin/examples
+
+v0.7 2010-11-17
+---------------
+
+b2ac327 Move Dist::Zilla plugin to a subdirectory to be released in a separate tarball
+
+===================================
+End of changes in the last 365 days
+===================================
