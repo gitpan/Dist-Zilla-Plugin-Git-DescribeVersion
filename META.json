@@ -1,5 +1,5 @@
 {
-   "abstract" : "provide version using git-describe",
+   "abstract" : "Provide version using git-describe",
    "author" : [
       "Randy Stauner <rwstauner@cpan.org>"
    ],
@@ -50,7 +50,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Git::DescribeVersion" : {
          "file" : "lib/Dist/Zilla/Plugin/Git/DescribeVersion.pm",
-         "version" : "0.007006"
+         "version" : "1.000010"
       }
    },
    "release_status" : "stable",
@@ -66,13 +66,13 @@
          "web" : "http://github.com/magnificent-tears/git-describeversion/tree"
       }
    },
-   "version" : "0.007006",
+   "version" : "1.000010",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::Git::DescribeVersion",
             "name" : "@GopherRepellent/Git::DescribeVersion",
-            "version" : "0.007006"
+            "version" : "1.000010"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
@@ -214,6 +214,11 @@
             "class" : "Dist::Zilla::Plugin::PodCoverageTests",
             "name" : "@GopherRepellent/PodCoverageTests",
             "version" : "4.102343"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PodSpellingTests",
+            "name" : "@GopherRepellent/PodSpellingTests",
+            "version" : "1.101420"
          },
          {
             "class" : "Dist::Zilla::Plugin::PortabilityTests",

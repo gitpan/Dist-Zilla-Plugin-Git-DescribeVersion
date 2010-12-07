@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Dist-Zilla-Plugin-Git-DescribeVersion,
-version 0.007006:
+version 1.000010:
 
-  provide version using git-describe
+  Provide version using git-describe
 
 This software is copyright (c) 2010 by Randy Stauner.
 

@@ -1,8 +1,8 @@
 package Dist::Zilla::Plugin::Git::DescribeVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '0.007006';
+  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.000010';
 }
-# ABSTRACT: provide version using git-describe
+# ABSTRACT: Provide version using git-describe
 
 # I don't know much about Dist::Zilla or Moose.
 # This code copied/modified from Dist::Zilla::Plugin::Git::NextVersion.
@@ -55,13 +55,15 @@ no Moose;
 __END__
 =pod
 
+=for :stopwords Randy Stauner RJBS JQUELIN CPAN AnnoCPAN RT CPANTS Kwalitee diff
+
 =head1 NAME
 
-Dist::Zilla::Plugin::Git::DescribeVersion - provide version using git-describe
+Dist::Zilla::Plugin::Git::DescribeVersion - Provide version using git-describe
 
 =head1 VERSION
 
-version 0.007006
+version 1.000010
 
 =head1 SYNOPSIS
 
@@ -77,7 +79,8 @@ It uses L<Git::DescribeVersion> to count the number of commits
 since the last tag (matching I<match_pattern>) or since the initial commit,
 and uses the result as the I<version> parameter for your distribution.
 
-The plugin accepts the same options as the base module's constructor.
+The plugin accepts the same options as
+L<< Git::DescribeVersion->new()|Git::DescribeVersion/new >>.
 See L<Git::DescribeVersion/OPTIONS>.
 
 You can also set the C<V> environment variable to override the new version.
@@ -108,9 +111,7 @@ L<Dist::Zilla::Plugin::Git::NextVersion>
 
 This code copied/modified from L<Dist::Zilla::Plugin::Git::NextVersion>.
 
-Thanks I<rjbs> and I<jquelin> (and many others)!
-
-=for :stopwords CPAN AnnoCPAN RT CPANTS Kwalitee diff
+Thanks I<RJBS> and I<JQUELIN> (and many others)!
 
 =head1 SUPPORT
 
@@ -127,6 +128,12 @@ You can find documentation for this module with the perldoc command.
 Search CPAN
 
 L<http://search.cpan.org/dist/Dist-Zilla-Plugin-Git-DescribeVersion>
+
+=item *
+
+RT: CPAN's Bug Tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-Git-DescribeVersion>
 
 =item *
 
@@ -148,12 +155,6 @@ L<http://cpanforum.com/dist/Dist-Zilla-Plugin-Git-DescribeVersion>
 
 =item *
 
-RT: CPAN's Bug Tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-Git-DescribeVersion>
-
-=item *
-
 CPANTS Kwalitee
 
 L<http://cpants.perl.org/dist/overview/Dist-Zilla-Plugin-Git-DescribeVersion>
@@ -170,14 +171,6 @@ CPAN Testers Matrix
 
 L<http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Git-DescribeVersion>
 
-=item *
-
-Source Code Repository
-
-L<git://github.com/magnificent-tears/git-describeversion.git>
-
-L<http://github.com/magnificent-tears/git-describeversion/tree>
-
 =back
 
 =head2 Bugs
@@ -185,6 +178,13 @@ L<http://github.com/magnificent-tears/git-describeversion/tree>
 Please report any bugs or feature requests to C<bug-dist-zilla-plugin-git-describeversion at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dist-Zilla-Plugin-Git-DescribeVersion>.  I will be
 notified, and then you'll automatically be notified of progress on your bug as I make changes.
+
+=head2 Source Code
+
+
+L<http://github.com/magnificent-tears/git-describeversion/tree>
+
+  git clone git://github.com/magnificent-tears/git-describeversion.git
 
 =head1 AUTHOR
 

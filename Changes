@@ -1,8 +1,17 @@
 Revision History for Dist-Zilla-Plugin-Git-DescribeVersion
 ==========================================================
 
-0.007006
---------
+v0.10 2010-12-06
+----------------
+
+e0589d7 Uppercase referenced author id's and add them as stopwords
+
+v0.8 2010-12-06
+---------------
+
+66e98d1 Capitalize abstract descriptions
+
+cd3341c Explicitly specify and link to Git::DV->new() to clarify POD
 
 f8d40c2 Configure new plugin dist
 

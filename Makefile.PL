@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'provide version using git-describe',
+  'ABSTRACT' => 'Provide version using git-describe',
   'AUTHOR' => 'Randy Stauner <rwstauner@cpan.org>',
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'namespace::autoclean' => '0.09'
   },
-  'VERSION' => '0.007006',
+  'VERSION' => '1.000010',
   'test' => {
     'TESTS' => 't/*.t'
   }
