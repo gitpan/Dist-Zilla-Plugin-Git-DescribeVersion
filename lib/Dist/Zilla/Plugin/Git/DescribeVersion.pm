@@ -1,6 +1,9 @@
 package Dist::Zilla::Plugin::Git::DescribeVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.000010';
+  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.001005';
+}
+BEGIN {
+  $Dist::Zilla::Plugin::Git::DescribeVersion::AUTHORITY = 'cpan:RWSTAUNER';
 }
 # ABSTRACT: Provide version using git-describe
 
@@ -63,7 +66,7 @@ Dist::Zilla::Plugin::Git::DescribeVersion - Provide version using git-describe
 
 =head1 VERSION
 
-version 1.000010
+version 1.001005
 
 =head1 SYNOPSIS
 
@@ -182,9 +185,9 @@ notified, and then you'll automatically be notified of progress on your bug as I
 =head2 Source Code
 
 
-L<http://github.com/magnificent-tears/git-describeversion/tree>
+L<http://github.com/magnificent-tears/Git-DescribeVersion/tree>
 
-  git clone git://github.com/magnificent-tears/git-describeversion.git
+  git clone git://github.com/magnificent-tears/Git-DescribeVersion.git
 
 =head1 AUTHOR
 

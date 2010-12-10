@@ -14,6 +14,8 @@ my %WriteMakefileArgs = (
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
     'File::Temp' => '0',
+    'Test::MockObject' => '1.09',
+    'Test::MockObject::Extends' => '1.09',
     'Test::More' => '0.96'
   },
   'CONFIGURE_REQUIRES' => {
@@ -30,7 +32,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'namespace::autoclean' => '0.09'
   },
-  'VERSION' => '1.000010',
+  'VERSION' => '1.001005',
   'test' => {
     'TESTS' => 't/*.t'
   }

@@ -1,6 +1,13 @@
 Revision History for Dist-Zilla-Plugin-Git-DescribeVersion
 ==========================================================
 
+1.001005
+--------
+
+d9a5f1a Specify the Test::MockObject version required in each use statement
+
+0c07e30 Write a small test script for DZ plugin
+
 v0.10 2010-12-06
 ----------------
 
