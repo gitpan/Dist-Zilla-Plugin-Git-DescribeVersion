@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::Git::DescribeVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.001005';
+  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.001011';
 }
 BEGIN {
   $Dist::Zilla::Plugin::Git::DescribeVersion::AUTHORITY = 'cpan:RWSTAUNER';
@@ -58,7 +58,7 @@ no Moose;
 __END__
 =pod
 
-=for :stopwords Randy Stauner RJBS JQUELIN CPAN AnnoCPAN RT CPANTS Kwalitee diff
+=for :stopwords Randy Stauner RJBS JQUELIN CPAN AnnoCPAN RT CPANTS Kwalitee diff IRC
 
 =head1 NAME
 
@@ -66,7 +66,7 @@ Dist::Zilla::Plugin::Git::DescribeVersion - Provide version using git-describe
 
 =head1 VERSION
 
-version 1.001005
+version 1.001011
 
 =head1 SYNOPSIS
 
@@ -124,6 +124,9 @@ You can find documentation for this module with the perldoc command.
 
 =head2 Websites
 
+The following websites have more information about this module, and may be of help to you. As always,
+in addition to those websites please use your favorite search engine to discover more resources.
+
 =over 4
 
 =item *
@@ -176,9 +179,9 @@ L<http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Git-DescribeVersion>
 
 =back
 
-=head2 Bugs
+=head2 Bugs / Feature Requests
 
-Please report any bugs or feature requests to C<bug-dist-zilla-plugin-git-describeversion at rt.cpan.org>, or through
+Please report any bugs or feature requests by email to C<bug-dist-zilla-plugin-git-describeversion at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dist-Zilla-Plugin-Git-DescribeVersion>.  I will be
 notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
