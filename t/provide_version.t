@@ -1,6 +1,7 @@
+# vim: set ts=2 sts=2 sw=2 expandtab smarttab:
 use strict;
 use warnings;
-use Test::More;
+use Test::More 0.96;
 use Test::MockObject 1.09;
 use Test::MockObject::Extends 1.09;
 
@@ -19,7 +20,7 @@ $gdv->set_bound(version => \$expversion);
 %Git::DescribeVersion::Defaults = ('cookie' => 'tasty', no => 'change');
 
 my $mod = 'Dist::Zilla::Plugin::Git::DescribeVersion';
-require_ok($mod);
+eval "require $mod" or die $@;
 my $plug = $mod->new({plugin_name => $mod, zilla => $zilla});
 isa_ok($plug, $mod);
 
@@ -35,11 +36,11 @@ is($plug->provide_version(), $version, 'expected version');
 like($log, qr/described version as \Q$version\E/, 'version logged expectedly');
 
 {
-	# test %ENV override
-	local $ENV{V} = 'reindeer';
-	is($plug->provide_version(), $ENV{V}, '$ENV{V} overrides');
-	delete $ENV{V};
-	is($plug->provide_version(), $version, '$ENV{V} unset, returns version');
+  # test %ENV override
+  local $ENV{V} = 'reindeer';
+  is($plug->provide_version(), $ENV{V}, '$ENV{V} overrides');
+  delete $ENV{V};
+  is($plug->provide_version(), $version, '$ENV{V} unset, returns version');
 }
 
 # test no version received from Git::DescribeVersion
@@ -51,10 +52,10 @@ like($fatal, qr/could not determine version/i, 'expected warning logged');
 # test argument passing to Git::DescribeVersion
 $expversion = $version;
 foreach my $opt ( $Git::DescribeVersion::Defaults{cookie}, qw(bark woof) ){
-	$plug->mock(cookie => sub { $opt });
-	$plug->provide_version();
-	is($gdv->{cookie}, $opt, 'argument passed to gdv');
-	is($gdv->{no}, 'change', 'attribute at default');
+  $plug->mock(cookie => sub { $opt });
+  $plug->provide_version();
+  is($gdv->{cookie}, $opt, 'argument passed to gdv');
+  is($gdv->{no}, 'change', 'attribute at default');
 }
 
 # it's better than nothing

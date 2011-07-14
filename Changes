@@ -1,36 +1,33 @@
-Revision History for Dist-Zilla-Plugin-Git-DescribeVersion
-==========================================================
+Revision history for Dist::Zilla::Plugin::Git::DescribeVersion
 
-1.001011
---------
+1.003     2011-07-14T23:46:03Z
 
-d9a5f1a Specify the Test::MockObject version required in each use statement
+  - Remove unused namespace::autoclean prereq
+  - Documentation improvements
+  - Superficial dist/release changes
 
-0c07e30 Write a small test script for DZ plugin
+1.001011  2010-12-17T04:26:42Z
 
-v0.10 2010-12-06
-----------------
+  - use Module::Build for installation
+  - Documentation/dist meta improvements
 
-e0589d7 Uppercase referenced author id's and add them as stopwords
+1.001005  2010-12-10T19:29:47Z
 
-v0.8 2010-12-06
----------------
+  - Add test script for provide_version()
+  - Documentation/dist meta improvements
 
-66e98d1 Capitalize abstract descriptions
+1.000010  2010-12-07T21:07:19Z
 
-cd3341c Explicitly specify and link to Git::DV->new() to clarify POD
+  - Documentation/dist meta improvements
 
-f8d40c2 Configure new plugin dist
+0.007006  2010-11-17T16:22:34Z
 
-f58a4ee Add tailored gitignore file
+  - Initial release after being separated from Git-DescribeVersion dist
 
-2fe251f Move Dist::Zilla example ini to plugin/examples
+0.006012  2010-11-15T13:27:00Z
 
-v0.7 2010-11-17
----------------
+  - Initial non-development release to CPAN (in Git-DescribeVersion dist)
 
-b2ac327 Move Dist::Zilla plugin to a subdirectory to be released in a separate tarball
+0.004008  2010-10-24T22:09:00Z
 
-===================================
-End of changes in the last 365 days
-===================================
+  - Initial  (development)  release to CPAN (in Git-DescribeVersion dist)

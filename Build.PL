@@ -22,7 +22,7 @@ my %module_build_args = (
     'Randy Stauner <rwstauner@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-Git-DescribeVersion',
-  'dist_version' => '1.001011',
+  'dist_version' => '1.003',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::Git::DescribeVersion',
   'recommends' => {},
@@ -32,7 +32,6 @@ my %module_build_args = (
     'Dist::Zilla::Role::VersionProvider' => '0',
     'Git::DescribeVersion' => '0',
     'Moose' => '0',
-    'namespace::autoclean' => '0.09',
     'perl' => '5.006'
   },
   'script_files' => []

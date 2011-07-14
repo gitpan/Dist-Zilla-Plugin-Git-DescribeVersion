@@ -58,7 +58,6 @@ eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('Test::MockObject','1.09') };
 eval { $v .= pmver('Test::MockObject::Extends','1.09') };
 eval { $v .= pmver('Test::More','0.96') };
-eval { $v .= pmver('namespace::autoclean','0.09') };
 
 
 
