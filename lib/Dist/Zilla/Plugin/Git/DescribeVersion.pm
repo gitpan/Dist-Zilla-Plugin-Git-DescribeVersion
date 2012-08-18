@@ -11,17 +11,15 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Git::DescribeVersion;
-BEGIN {
-  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.003';
+{
+  $Dist::Zilla::Plugin::Git::DescribeVersion::VERSION = '1.004';
 }
+# git description: v1.003-5-gff644eb
+
 BEGIN {
   $Dist::Zilla::Plugin::Git::DescribeVersion::AUTHORITY = 'cpan:RWSTAUNER';
 }
 # ABSTRACT: Provide version using git-describe
-
-# I don't know much about Dist::Zilla or Moose.
-# This code copied/modified from Dist::Zilla::Plugin::Git::NextVersion.
-# Thanks rjbs and jquelin!
 
 use Dist::Zilla 4 ();
 use Git::DescribeVersion ();
@@ -29,13 +27,9 @@ use Moose;
 
 with 'Dist::Zilla::Role::VersionProvider';
 
-# -- attributes
-
 while( my ($name, $default) = each %Git::DescribeVersion::Defaults ){
   has $name => ( is => 'ro', isa=>'Str', default => $default );
 }
-
-# -- role implementation
 
 sub provide_version {
   my ($self) = @_;
@@ -47,7 +41,6 @@ sub provide_version {
   my $opts = { map { $_ => $self->$_() }
     keys %Git::DescribeVersion::Defaults };
 
-  # TODO: Version::Next::next_version($tag) if $ENV{DZIL_RELEASING}?
   my $new_ver = eval {
     Git::DescribeVersion->new($opts)->version;
   };
@@ -60,16 +53,19 @@ sub provide_version {
   $self->zilla->version("$new_ver");
 }
 
-__PACKAGE__->meta->make_immutable;
 no Moose;
+__PACKAGE__->meta->make_immutable;
 1;
 
 
 __END__
 =pod
 
-=for :stopwords Randy Stauner RJBS JQUELIN cpan testmatrix url annocpan anno bugtracker rt
-cpants kwalitee diff irc mailto metadata placeholders
+=encoding utf-8
+
+=for :stopwords Randy Stauner ACKNOWLEDGEMENTS repo cpan testmatrix url annocpan anno
+bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+metacpan
 
 =head1 NAME
 
@@ -77,7 +73,7 @@ Dist::Zilla::Plugin::Git::DescribeVersion - Provide version using git-describe
 
 =head1 VERSION
 
-version 1.003
+version 1.004
 
 =head1 SYNOPSIS
 
@@ -103,6 +99,31 @@ the last tag is 0.005 and you want to jump to 1.000 you can set V = 1.000.
 
   $ V=1.000 dzil release
 
+=head1 USAGE
+
+B<Note>: Since L<Git::DescribeVersion>
+appends the third part to a two-part version tag
+(for example, a tag of C<v1.2> becomes C<v1.2.35>)
+This plugin is not designed to be combined with
+L<Dist::Zilla::Plugin::Git::Tag>
+(which will tag the repo with the generated version).
+
+Instead it works better with manual tags.
+For example, you might manually increase the minor version
+(from C<v1.2> to C<v1.3>) when a big feature is added or the API changes.
+Then each build will append the number of commits as the revision number
+(C<v1.3> becomes C<v1.3.28>).
+
+This is probably more useful for projects without formal releases.
+This is in fact the only way that the author still uses the module:
+For C<$work> projects where builds are deployed often
+to a variety of internal environments.
+
+For projects released to the world I suggest using the simple and logical
+L<Dist::Zilla::Plugin::Git::NextVersion>
+which does work nicely with
+L<Dist::Zilla::Plugin::Git::Tag>.
+
 =for Pod::Coverage provide_version
 
 =head1 SEE ALSO
@@ -122,10 +143,6 @@ L<Dist::Zilla>
 L<Dist::Zilla::Plugin::Git::NextVersion>
 
 =back
-
-This code copied/modified from L<Dist::Zilla::Plugin::Git::NextVersion>.
-
-Thanks I<RJBS> and I<JQUELIN> (and many others)!
 
 =head1 SUPPORT
 
@@ -201,9 +218,9 @@ progress on the request by the system.
 =head2 Source Code
 
 
-L<http://github.com/rwstauner/Dist-Zilla-Plugin-Git-DescribeVersion>
+L<https://github.com/rwstauner/Dist-Zilla-Plugin-Git-DescribeVersion>
 
-  git clone http://github.com/rwstauner/Dist-Zilla-Plugin-Git-DescribeVersion
+  git clone https://github.com/rwstauner/Dist-Zilla-Plugin-Git-DescribeVersion.git
 
 =head1 AUTHOR
 
